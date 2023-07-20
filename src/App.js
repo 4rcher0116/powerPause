@@ -2,25 +2,27 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import "tailwindcss/tailwind.css";
-import Sidebar from './sidebar';
-import Header from './components/Header1';
-import CalltoAction from './components/CalltoAction';
-import Pathway from './components/pathway/Pathway';
+import Sidebar from './components/sidebar';
 
+import Title from './screens/Title';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import WorkoutVideos from './screens/Workout1Pathway';
 
 function App() {
   return (
-    <div className="flex flex-row">
-      <div className='flex w-auto'>
-        <Sidebar />
+    <Router>
+      <div className="flex flex-row">
+        <div className='flex w-auto'>
+          <Sidebar />
+        </div>
+
+        <Routes>
+          {/* <Route path="/exercise-page" element={<ExercisePage />} /> */}
+          <Route path ="/excercise-page" element={<WorkoutVideos />} />
+          <Route path="/" element={<Title />} />
+        </Routes>
       </div>
-      <div className='flex flex-col w-full'>
-        <Header />
-        <CalltoAction />
-        <Pathway />
-      </div>
-      
-    </div>
+    </Router>
   );
 }
 
