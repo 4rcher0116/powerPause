@@ -13,7 +13,7 @@ const CalltoAction = () => {
                     It&#x27;s now or never.
                 </span>
             </h2>
-            <p class="text-xl mt-4 max-w-md mx-auto text-black px-3 font-bold">
+            <p class="text-xl  text-center mt-4 max-w-md mx-2 text-black px-1 font-bold">
               Studies have shown that the most efficient forms of taking a break are napping or exercise. Maximize your breaktimes and optimize productivity with energizing exercise or refreshing naps. Take control for a more fulfilling workday!
             </p>
             <div class="lg:mt-0 lg:flex-shrink-0">

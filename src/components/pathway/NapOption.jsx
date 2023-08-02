@@ -1,7 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import myGif from './sleep.gif';
 
 const NapOption = () => {
+    const history = useNavigate();
+
+    const handleNapButtonClick = () => {
+        history('/napping-page');
+    }
+
+
+
     return (
     
         <div class="flex items-center justify-center w-1/2">
@@ -20,7 +29,7 @@ const NapOption = () => {
                     </div>
                     <div class="grid gap-10 items-center prod-info">
                         <div class="flex items-center justify-between text-gray-900 md:flex-row">
-                            <button class="px-6 py-2 uppercase transition duration-200 ease-in border-2 border-gray-900 rounded-full hover:bg-gray-800 hover:text-white focus:outline-none">
+                            <button onClick={handleNapButtonClick} class="px-6 py-2 uppercase transition duration-200 ease-in border-2 border-gray-900 rounded-full hover:bg-gray-800 hover:text-white focus:outline-none">
                                 Choose to Nap
                             </button>
                         </div>
