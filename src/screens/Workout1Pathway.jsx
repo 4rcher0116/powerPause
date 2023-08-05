@@ -1,40 +1,45 @@
 import React, { useState } from "react";
 import axios from "axios";
+import ExcerciseDuration from "../components/ExcerciseDurations";
 
 const WorkoutVideos = () => {
   const [duration, setDuration] = useState("");
   const [videos, setVideos] = useState([]);
 
-  const handleDurationChange = (event) => {
-    setDuration(event.target.value);
-  };
-
+  
+  // ... (component logic remains the same)
   const fetchWorkoutVideos = async () => {
     try {
       const response = await axios.get(
         "https://www.googleapis.com/youtube/v3/search",
         {
           params: {
-            key: "",
-            q: "at home workout",
+            key: "AIzaSyDNhdKnyML_xkajoBrNbt1ZaFfk34wWHLg",
+            q:  `${duration} minute at home workout`,
             type: "video",
             part: "snippet",
-            videoDuration: `PT${duration}M`, // PT indicates duration format, M indicates minutes
-            maxResults: 10, // You can change the number of results here
+            maxResults: 20, // You can change the number of results here
           },
         }
       );
-
+  
       setVideos(response.data.items);
     } catch (error) {
       console.error("Error fetching workout videos:", error);
     }
   };
+  
 
+
+  const handleDurationChange = (event) => {
+    setDuration(event.target.value);
+  };
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     fetchWorkoutVideos();
   };
+  
 
   return (
     <div className="container mx-auto mt-8">
@@ -56,6 +61,7 @@ const WorkoutVideos = () => {
           Search
         </button>
       </form>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {videos.map((video) => (
           <div key={video.id.videoId} className="bg-white rounded-lg p-4 shadow-md">
@@ -72,6 +78,8 @@ const WorkoutVideos = () => {
           </div>
         ))}
       </div>
+
+      <ExcerciseDuration />
     </div>
   );
 };

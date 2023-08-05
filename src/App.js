@@ -22,7 +22,7 @@ function App() {
           {/* <Route path="/exercise-page" element={<ExercisePage />} /> */}
           <Route path ="/exercise-page" element={<WorkoutVideos />} />
           <Route path ="/napping-page" element={<Napping />} />
-          <Route path="/" element={<Title />} />
+          <Route path="/" element={<CompTester />} />
         </Routes>
       </div>
     </Router>
