@@ -1,25 +1,23 @@
 import React from 'react';
-import logoSVG from "./assets/logo3.svg";
-import bgImage from "./assets/workoutbg-1.jpg";
+import logoSVG from "./assets/logofinal2.svg";
+import bgImage from "./assets/workoutbg-2.png";
 
 const Header2 = () => {
   return (
-    <div className="relative "  >
-     <img src={bgImage} className='object-cover w-full' />
+    <section id="home" className='flex md:flex-row flex-col'>
+      <div className='flex-col'>
+        <div className='flex flex-row items-center py-[6px] px-4 rounded-[10px] mb-2'>
+          <div className='flex flex-row justify-between items-center w-full'>
+            <h1>
+              Optimize <br className='sm:block hidden'/>Your <br /> <span text-gradient> Break Time </span>
+            </h1>
 
-     {/* <!-- Haze overlay --> */}
-     <div className="absolute inset-0 bg-gray-800 bg-opacity-70"></div>
+          </div>
+        </div>
+      </div>
 
-        {/* <!-- Your content on top of the image --> */}
-     <div className="absolute inset-0 flex items-left flex-col">
-        <img src={logoSVG} alt='Power Pause' className='h-20 m-10'/>
-
-        <p className="text-white text-2xl font-bold mt-10 mx-5">Take the Most Efficient Break
-        It's now or never.
-        Studies have shown that the most efficient forms of taking a break are napping or exercise. Maximize your breaktimes and optimize productivity with energizing exercise or refreshing naps. Take control for a more fulfilling workday!</p>
-     </div>
-    </div>
+    </section>
   )
 }
 
-export default Header2;
+export default Header2

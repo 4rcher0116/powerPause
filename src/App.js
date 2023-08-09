@@ -6,9 +6,9 @@ import Sidebar from './components/sidebar';
 
 import Title from './screens/Title';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import WorkoutVideos from './screens/Workout1Pathway';
 import CompTester from './screens/CompTester';
 import Napping from './screens/Napping';
+import ExcercisePage from './screens/ExcercisePage';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
 
         <Routes>
           {/* <Route path="/exercise-page" element={<ExercisePage />} /> */}
-          <Route path ="/exercise-page" element={<WorkoutVideos />} />
+          <Route path ="/exercise-page" element={<ExcercisePage />} />
           <Route path ="/napping-page" element={<Napping />} />
           <Route path="/" element={<CompTester />} />
         </Routes>

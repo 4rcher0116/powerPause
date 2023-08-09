@@ -116,7 +116,11 @@ const ExcerciseDuration = () => {
   };
 
   return (
-    <div className="divide-y divide-gray-100 rounded-xl border border-gray-100 bg-white">
+    <div className="divide-y divide-gray-100 rounded-xl border border-gray-100 bg-white font-medium text-large">
+      <div class="flex items-center justify-center h-20 bg-gray-200">
+        <h2 class="text-3xl font-bold">Recommended Durations</h2>
+      </div>
+
       {renderItems()}
     </div>
   );

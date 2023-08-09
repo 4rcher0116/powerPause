@@ -43,7 +43,8 @@ const WorkoutVideos = () => {
 
   return (
     <div className="container mx-auto mt-8">
-      <form className="mb-4" onSubmit={handleSubmit}>
+    
+      <form className="flex justify-center mb-4 border-2 rounded p-5 text-lg font-medium mx-1" onSubmit={handleSubmit}>
         <label className="mr-4">
           Enter workout duration (in minutes):
           <input
