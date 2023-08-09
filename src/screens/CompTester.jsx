@@ -14,7 +14,7 @@ const CompTester = () => {
         <Header2 />
         <Footer />
         {/* <Timer hour={23} minute={59} /> */}
-        <Timer startHour={1} startMinute={30} />
+        <Timer startHour={0} startMinute={1} />
 
     </div>
   )
