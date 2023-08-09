@@ -1,42 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const Timer = (props) => {
-  const [days, setDays] = useState(0);
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
-
-  const history = useNavigate();
-
-  const calculateDeadline = () => {
-    const now = new Date();
-    const deadline = new Date(now.getFullYear(), now.getMonth(), now.getDate(), props.hour, props.minute);
-
-    if (deadline < now) {
-      deadline.setDate(deadline.getDate() + 1);
-    }
-
-    const time = deadline - now;
-    setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
-    setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
-    setMinutes(Math.floor((time / 1000 / 60) % 60));
-    setSeconds(Math.floor((time / 1000) % 60));
-
-    if(time <= 0){
-        redirectPage();
-    }
-  };
-
-  const redirectPage = () =>{
-    history.push('/')
-  }
+  const { startHour = 0, startMinute = 0 } = props;
+  const initialTime = startHour * 60 * 60 + startMinute * 60;
+  const [remainingTime, setRemainingTime] = useState(initialTime);
 
   useEffect(() => {
-    const interval = setInterval(calculateDeadline, 1000);
+    if (remainingTime > 0) {
+      const interval = setInterval(() => {
+        setRemainingTime(prevRemainingTime => prevRemainingTime - 1);
+      }, 1000);
 
-    return () => clearInterval(interval);
-  }, []);
+      return () => clearInterval(interval);
+    }
+  }, [remainingTime]); // Include remainingTime in the dependency array
+
+  const days = Math.floor(remainingTime / (24 * 60 * 60));
+  const hours = Math.floor((remainingTime / (60 * 60)) % 24);
+  const minutes = Math.floor((remainingTime / 60) % 60);
+  const seconds = remainingTime % 60;
 
   return (
     <div className="timer bg-opacity-10 bg-white inline-block mt-6 p-4 text-center w-80">
@@ -48,4 +30,6 @@ const Timer = (props) => {
 };
 
 export default Timer;
+
+
 

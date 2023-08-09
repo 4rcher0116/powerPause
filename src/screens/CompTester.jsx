@@ -13,9 +13,11 @@ const CompTester = () => {
         {/* <ExerciseDuration /> */}
         <Header2 />
         <Footer />
-        <Timer hour={23} minute={59} />
+        {/* <Timer hour={23} minute={59} /> */}
+        <Timer startHour={1} startMinute={30} />
+
     </div>
   )
 }
 
-export default CompTester
+export default CompTester;
