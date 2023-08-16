@@ -3,9 +3,12 @@ import logoSVG from "./assets/logo3.svg";
 
 const Header = () => {
   return (
-    <div className=' flex justify-center items-center text-center text-3xl font-extrabold dark:text-white sm:text-4xl text-yellow-400 w-full'>
-        <img src={logoSVG} alt='Power Pause' className='h-20'/>
-        {/* <h2 className='text-center'>Power Pause</h2> */}
+    <div className="flex flex-col justify-between md:flex-row md:gap-32 lg:flex-col lg:gap-32 w-full items-start md:w-full lg:w-full" id="RootRoot">
+      <img
+        src="https://file.rendit.io/n/1FIAG4kbERyc0x8o4z4K.png"
+        className="w-1/2 mx-auto md:ml-[145px] "
+        alt="logo"
+      />
     </div>
   )
 }

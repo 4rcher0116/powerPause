@@ -4,6 +4,6 @@
 
 @layer components{
     .sidebar-icon{
-        @apply relative flex items-center justify-center h-12 w-12 mt-2 mb-2 mx-auto rounded-sm shadow-lg bg-eggshell text-primary hover:bg-yellow-300 hover:text-white hover:rounded-xl transition-all duration-300;
+        @apply relative flex items-center justify-center h-12 w-12 mt-2 mb-2 mx-auto rounded-sm shadow-lg bg-eggshell opacity-100 text-primary hover:bg-yellow-300 hover:text-white hover:rounded-xl transition-all duration-300;
     }
 }

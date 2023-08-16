@@ -3,6 +3,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import "tailwindcss/tailwind.css";
 import Sidebar from './components/sidebar';
+import bgImage from './screens/assets3/gradientlong.png';
 
 import Title from './screens/Title';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -13,7 +14,7 @@ import ExcercisePage from './screens/ExcercisePage';
 function App() {
   return (
     <Router>
-      <div className="flex flex-row">
+      <div className="flex flex-row h-full" style={{ backgroundImage: `url(${bgImage})` }}>
         <div className='flex w-auto'>
           <Sidebar />
         </div>

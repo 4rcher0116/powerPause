@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import ExcerciseDuration from "../components/ExcerciseDurations";
+import Accordion from "../components/NewAccordion";
 
 const WorkoutVideos = () => {
   const [duration, setDuration] = useState("");
@@ -44,12 +45,12 @@ const WorkoutVideos = () => {
   return (
     <div className="container mx-auto mt-8">
     
-      <form className="flex justify-center mb-4 border-2 rounded p-5 text-lg font-medium mx-1" onSubmit={handleSubmit}>
-        <label className="mr-4">
-          Enter workout duration (in minutes):
+      <form className="flex flex-col justify-center mb-4 border-2 rounded p-5 text-lg font-medium mx-auto" onSubmit={handleSubmit}>
+        <label className="mr-4 text-white flex flex-col">
+          <h1>Enter workout duration (in minutes):</h1>
           <input
             type="number"
-            className="border rounded px-2 py-1 ml-2"
+            className="border rounded py-1"
             value={duration}
             onChange={handleDurationChange}
             required
@@ -57,7 +58,7 @@ const WorkoutVideos = () => {
         </label>
         <button
           type="submit"
-          className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded"
+          className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded w-3/5 mx-auto"
         >
           Search
         </button>
@@ -80,7 +81,7 @@ const WorkoutVideos = () => {
         ))}
       </div>
 
-      <ExcerciseDuration />
+      <Accordion />
     </div>
   );
 };

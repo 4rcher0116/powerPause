@@ -69,18 +69,18 @@ class NapCarousel extends Component {
                     showArrows={true}
                     onChange={this.onChange}
                     onClickItem={this.onClickItem}
-                    onClickThumb={this.onClickThumb}
+                    // onClickThumb={this.onClickThumb}
                 >
                     <div className='font relative'>
-                        <h1 className='font-bold text-2xl my-6'>Power Nap (15 Minutes)</h1>
+                        <h1 className='font-bold text-2xl my-6 text-white'>Power Nap (15 Minutes)</h1>
                         <img src={Pic2} alt="Slide 1" className='w-10 object-left-bottom' />
                     </div>
                     <div>
-                        <h1 className='font-bold text-2xl my-6'>Nasa Nap (45 Minutes)</h1>
+                        <h1 className='font-bold text-2xl my-6 text-white'>Nasa Nap (45 Minutes)</h1>
                         <img src={Pic3} alt="Slide 2" />
                     </div>
                     <div>
-                        <h1 className='font-bold text-2xl my-6'>Revive Cycle Nap (90 Minutes)</h1>
+                        <h1 className='font-bold text-2xl my-6 text-white'>Revive Cycle Nap (90 Minutes)</h1>
                         <img src={Pic1} alt="Slide 3" />
                     </div>
                 </Carousel>
