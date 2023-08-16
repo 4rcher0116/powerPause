@@ -15,7 +15,7 @@ const WorkoutVideos = () => {
         "https://www.googleapis.com/youtube/v3/search",
         {
           params: {
-            key: "AIzaSyDNhdKnyML_xkajoBrNbt1ZaFfk34wWHLg",
+            key: "",
             q:  `${duration} minute at home workout`,
             type: "video",
             part: "snippet",
